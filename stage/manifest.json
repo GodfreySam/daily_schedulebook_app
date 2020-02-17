@@ -1,0 +1,31 @@
+{
+  "name": "Daily Schedule_Book With Voice_Reminder",
+  "short_name": "Daily Schedule_Voice Reminder",
+  "start_url": "index.html",
+  "display": "standalone",
+  "background_color": "#fbc531",
+  "theme_color": "#487eb0",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/icons/hand-holding-pen-icon-50x31.jpg",
+      "type": "image/jpg",
+      "sizes": "50x31"
+    },
+    {
+      "src": "/images/icons/hand-holding-pen-icon-72x45.jpg",
+      "type": "image/jpg",
+      "sizes": "72x45"
+    },
+    {
+      "src": "/images/icons/hand-holding-pen-icon-100x63.jpg",
+      "type": "image/jpg",
+      "sizes": "100x63"
+    },
+    {
+      "src": "/images/icons/hand-holding-pen-icon-150x95.jpg",
+      "type": "image/jpg",
+      "sizes": "150x95"
+    }
+  ]
+}

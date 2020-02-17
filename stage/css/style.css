@@ -61,7 +61,7 @@ main {
 } 
 
 h1.page-header {
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     margin: 10px 0 40px 0; 
 }
 
@@ -71,7 +71,7 @@ span#time-zone {
     font-size: 0.7rem;
     font-weight: bold;
 }
- 
+
 textarea.form-control { 
     font-size: 0.9rem;
     color: #fbc531;
@@ -85,9 +85,23 @@ textarea.form-control::placeholder {
     color: #fff;
 }
 
-.control {
+.time-area {
     display: flex;
-    flex-direction: row;
+}
+
+.time-area input[type = time] {
+    font-size: 0.8rem;
+    margin-left: 5px;
+    background: inherit;
+    color: #fff;
+}
+
+.timer label {
+    font-size: 0.8rem;
+}
+
+#stopLabel {
+    margin-left: 2rem;
 }
 
 label {
@@ -97,12 +111,17 @@ label {
 td#items {
     display: flex;
     flex-direction: row;
-    margin-bottom: -15px;
+    margin-bottom: 0.25rem;
+    justify-content: space-around;
 }
 
  .inner-td {
-    font-size: 0.7rem;
+    font-size: 0.74rem;
+    color: darkred;
     padding-right: 10px;
+    padding-bottom: 0;
+    margin-bottom: -10px;
+    font-stretch: extra-condensed;
 }
 
 label#begin {
@@ -118,33 +137,7 @@ input#startTime, input#stopTime {
     border: none;
 }
 
-input#start, input#stop {
-    float: right;
-    margin-top: -5px;
-    font-size: 0.8rem;
-    background: inherit;
-    color: #fff;
-}
-
-.time-area {
-    margin-top: 40px;
-    margin-left: 5px;
-}
-
-.timer {
-    display: flex;
-    margin: -25px auto 0 0;
-}
-
-.timer label {
-    font-size: 0.8rem;
-}
-
-.timer label:first-child {
-    margin-bottom: -50px;
-}
-
-.control-area {
+.btn-area {
     display: flex;
 }
 
@@ -154,7 +147,6 @@ input#start, input#stop {
 
 .add-btn {
     font-size: 0.9rem;
-    margin: -15px auto 0 0;
 }
 
 thead tr#tr-time th { font-size: 0.8rem;}
@@ -163,53 +155,59 @@ tbody tr {
     border-bottom: 0.125rem solid #fff;
 }
 
-
 /* Media Query */
-@media(max-width: 350px) {
-    .control {
+@media(max-width: 700px) {
+    
+     h1.page-header {
+         font-size: 1rem;
+        margin: 0 0 20px 0; 
+    }
+
+    .time-area {
         flex-direction: column;
     }
 
-     h1.page-header {
-        margin: 0 0 20px 0; 
+    .timer {
+        text-align: left;  
+        margin-top: 0; 
     }
-    
-    .time-area {
-        float: none;
-        margin-top: 0.1rem;
-        margin-bottom: 1rem;
+
+    .time-area input[type = time] {
+        margin-left: 15px;
+    }
+
+
+    #stopLabel {
         margin-left: 0;
     }
 
-    .timer {
-        display: flex;
-        margin: 0;
-    }
-
-    label#stopLabel {
+    label#end {
         padding-left: 2px;
         margin-left: -4px;
         margin-right: -5px;
     }
 
     .inner-td {
-    font-size: 0.7rem;
+    font-size: 0.68rem;
+    font-stretch: extra-condensed;
+    justify-content: space-evenly;
     padding: 0;
-    margin: 0 0 3px 30px;
+    margin: 0 0 3px 2px;
    }
 
    td#items {
     flex-direction: column;
-    margin-bottom: -15px;
+    margin-bottom: 0.15rem;
+    font-size: 0.85rem;
 }
 
    label#begin {
-    padding: 0;
-    margin-left: 10px;
+    padding: 0.3rem;
+    margin-left: 8px;
    }
 
    label#end {
-    padding: 0;
+    padding: 0.3rem;
     margin-left: 20px;
    }
 
@@ -220,55 +218,8 @@ tbody tr {
     textarea.form-control { 
         width: 85vw;
     }
+
+    tbody tr {
+    border-bottom: 0.1rem solid #fff;
 }
-
-@media(max-width: 780px) {
-
-     h1.page-header {
-        margin: 0 0 20px 0; 
-    } 
-    
-    .time-area {
-        float: none;
-        margin-top: 0.1rem;
-        margin-bottom: 1rem;
-        margin-left: 0;
-    }
-
-    .timer {
-        display: flex;
-        margin: 0;
-    }
-
-    input#start {
-        margin-left: 10px;
-   }
-
-    input#stop {
-        margin-left: 10px;
-    }
-    #stopLabel {
-        margin-left: 50px;
-    }
-
-    .inner-td {
-    font-size: 0.7rem;
-    padding: 0;
-    margin: 0 0 3px 30px;
-   }
-
-   label#begin {
-    padding: 0;
-    margin-right: -25px;
-   }
-
-   label#end {
-    padding: 0;
-    margin-right: -25px;
-   }
-
-    textarea.form-control { 
-        width: 85vw;
-    }
-
 }

@@ -16,10 +16,8 @@
   <link rel="apple-touch-icon" href="images/icons/hand-holding-pen-icon-100x63.jpg" />
   <link rel="apple-touch-icon" href="images/icons/hand-holding-pen-icon-150x95.jpg" />
 
-  <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
-  <meta name="theme-color" content="#db4938" />
-
-
+  <meta name="apple-mobile-web-app-status-bar" content="#487eb0" />
+  <meta name="theme-color" content="#487eb0" />
 </head>
 <body>
   <main>
@@ -35,21 +33,20 @@
 
 
             <div class="text-area form-group nav-item">
-              <label for="event" class="label mb-0">To-do:</label>
-              <textarea id="event" class="form-control form-control-lg" placeholder="Enter an event..."></textarea>
+              <textarea id="event" class="form-control form-control-sm" placeholder="Enter an event..."></textarea>
             </div>
     
-            <div class="time-area control nav-item">
-              <div class="form-group timer">
+            <div class="time-area nav-item">
+              <div class="form-group timer" id="start-control">
                 <label for="start" id="startLabel" class="label">Start:</label>
                 <input id="start" type="time" class="form-control-sm">
               </div>
-              <div class="form-group timer">
+              <div class="form-group timer" id="stop-control">
                 <label for="stop" id="stopLabel" class="label">Finish:</label>
                 <input id="stop" type="time" class="form-control-sm">
               </div>
             </div>
-            <div class="control-area form-group add-btn nav-item">
+            <div class="btn-area form-group add-btn nav-item">
               <button id="add-item" class="btn btn-primary">Add Item</button>
             </div>
           </div>

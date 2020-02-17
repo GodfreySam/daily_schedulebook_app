@@ -133,7 +133,17 @@ class UI {
      // Show success message
      UI.showAlert('Todo item Removed', 'success');
 
-   })
+   });
+
+   // Register Our Service Worker 
+   if ("serviceWorker" in navigator) {
+     window.addEventListener("load", function() {
+       navigator.serviceWorker
+       .register("/serviceWorker.js")
+       .then(res => this.console.log("service worker registered"))
+       .catch(err => this.console.log("service worker not registered", err))
+     })
+   }
 
  
    
