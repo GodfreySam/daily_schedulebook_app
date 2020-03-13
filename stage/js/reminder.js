@@ -47,9 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (h === '00') { h = 24 }
     if (m < '10') { m = '0' + m }
     if (s < '10') { s = '0' + s }
-    let currentTime = h + ":" + m + ":" + s + " _ " + dayName[d] + ", " + mtName[mt] + "  " + " " + dayOfMt;
-    // let c_t = h + ":" + m + ":" + s;
+    let currentTime = h + ":" + m + ":" + s;
+    let currentDay = dayName[d] + ", " + mtName[mt] + "  " + " " + dayOfMt;
     document.querySelector('#time-zone').textContent = currentTime;
+    document.querySelector('#day-zone').textContent = currentDay;
 
      // Compare current-time with Set-time
     const times = document.querySelectorAll('.todo-start');

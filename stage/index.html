@@ -20,47 +20,42 @@
   <meta name="theme-color" content="#487eb0" />
 </head>
 <body>
+  <div class="time-display"><span id='time-zone'></span><br><span id="day-zone"></span></div>
   <main>
-    <div class="container mt-4 side-header">
-      <form id="todo-form" onsubmit="setTimeout(function(){window.location.reload();}, 10)">
-         
-        <div class="form-group menu">
-          
-          <div class="menu-nav">
-            <div class="container menu-btn">
-              <div class="nav-item"><i class="fa fa-plus" role="button"></i></div>
+    <div class="container menu">
+      <div class="menu-nav">
+        <div class="container menu-btn">
+          <div class="nav-item"><i class="fa fa-plus mb-4" role="button"></i></div>
+        </div>
+        <form id="todo-form" class="mt-5 p-3" onsubmit="setTimeout(function(){window.location.reload();}, 10)">
+          <div class="form-group">
+          <div class="text-area form-group nav-item">
+            <textarea id="event" class="form-control form-control-sm" placeholder="Enter an event..."></textarea>
+          </div>
+          <div class="time-area nav-item">
+            <div class="form-group timer" id="start-control">
+              <label for="start" id="startLabel" class="label">Start:</label>
+              <input id="start" type="time" class="form-control-sm">
             </div>
-
-
-            <div class="text-area form-group nav-item">
-              <textarea id="event" class="form-control form-control-sm" placeholder="Enter an event..."></textarea>
-            </div>
-    
-            <div class="time-area nav-item">
-              <div class="form-group timer" id="start-control">
-                <label for="start" id="startLabel" class="label">Start:</label>
-                <input id="start" type="time" class="form-control-sm">
-              </div>
-              <div class="form-group timer" id="stop-control">
-                <label for="stop" id="stopLabel" class="label">Finish:</label>
-                <input id="stop" type="time" class="form-control-sm">
-              </div>
-            </div>
-            <div class="btn-area form-group add-btn nav-item">
-              <button id="add-item" class="btn btn-primary">Add Item</button>
+            <div class="form-group timer" id="stop-control">
+              <label for="stop" id="stopLabel" class="label">Finish:</label>
+              <input id="stop" type="time" class="form-control-sm">
             </div>
           </div>
-        </div>
-      </form>
+          <div class="btn-area form-group add-btn nav-item">
+            <button id="add-item" class="btn btn-primary">Add Item</button>
+          </div>
+          </div>
+        </form>
+      </div>
     </div>
     <div class="container mt-4">
       <div class="mx-auto">
-        <h1 class="page-header display-4 text-center">
+        <h1 class="page-header display-4 text-center mb-3">
           Daily <span class="text-primary"><span class="text-danger">Schedule</span><i
               class="fas fa-book-open text-primary"></i></span> & <span class="text-danger">Voice</span>
           Reminder
         </h1>
-        <span id='time-zone'></span>
         <table id="todo-table" class="table table-striped table-borderless mx-auto">
           <thead>
             <tr id="tr-time" class="table border-bottom">
