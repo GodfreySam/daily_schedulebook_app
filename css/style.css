@@ -32,9 +32,9 @@ main {
 
 /* Menu Overlay */
 .menu {
-    margin-top: 150px;
+    margin-top: 10px;
     position: fixed;
-    width: 100%;   
+    width: 80%;   
     opacity: 0.9;
     visibility: hidden;
 }
@@ -48,11 +48,11 @@ main {
 }
 
 .menu .menu-nav {
-    padding-top: 95px;
+    padding-top: 0;
     color: #fbc531; 
-    width: 100vw;
-    height: 70vh;
-    background: dimgrey;
+    width: 96vw;
+    /* height: 50vh; */
+    background: rgba(105, 105, 105, 0.9);
     overflow: hidden;
 }
 
@@ -65,16 +65,18 @@ h1.page-header {
     margin: 10px 0 40px 0; 
 }
 
-span#time-zone {
-    margin: 0;
-    padding: 0;
-    font-size: 0.7rem;
+.time-display {
+    margin-top: 5px;
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 0.6rem;
     font-weight: bold;
+    float: left;
 }
 
 textarea.form-control { 
     font-size: 0.9rem;
-    color: #fbc531;
+    color: #fff;
     border: 0.05rem solid #fbc531;
     background: inherit;
     width: 70vw;
@@ -157,10 +159,11 @@ tbody tr {
 
 /* Media Query */
 @media(max-width: 700px) {
-    
+
      h1.page-header {
          font-size: 1rem;
-        margin: 0 0 20px 0; 
+         float: left;
+         margin-left: 15px;
     }
 
     .time-area {
@@ -172,9 +175,14 @@ tbody tr {
         margin-top: 0; 
     }
 
-    .time-area input[type = time] {
+    .time-area #start {
+        margin-left: 24px;
+    }
+
+    .time-area #stop {
         margin-left: 15px;
     }
+
 
 
     #stopLabel {
@@ -209,10 +217,6 @@ tbody tr {
    label#end {
     padding: 0.3rem;
     margin-left: 20px;
-   }
-
-   input#startTime {
-       margin-right: -15px;
    }
 
     textarea.form-control { 
