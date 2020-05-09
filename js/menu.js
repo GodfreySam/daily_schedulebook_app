@@ -1,5 +1,5 @@
 // Select DOM Items
-const menuBtn = document.querySelector('.menu-btn');
+const closeBtn = document.querySelector('.fa-plus');
 const penBtn = document.querySelector('.pen-btn');
 const menu = document.querySelector('.menu');
 const menuNav = document.querySelector('.menu-nav');
@@ -10,8 +10,8 @@ let showMenu = false;
 
 const toggleMenu = () => {
   if (!showMenu) {
-    menuBtn.classList.add('close');
-    penBtn.classList.add('pen-hide');
+    // closeBtn.classList.remove('show');
+    penBtn.classList.add('close');
     menu.classList.add('show');
     menuNav.classList.add('show');
     navItems.forEach(item => item.classList.add('show'));
@@ -19,8 +19,8 @@ const toggleMenu = () => {
     // Set Menu State
     showMenu = true;
   } else {
-    // menuBtn.classList.remove('close');
-    penBtn.classList.remove('pen-hide');
+    // closeBtn.classList.add('close');
+    penBtn.classList.remove('close');
     menu.classList.remove('show');
     menuNav.classList.remove('show');
     navItems.forEach(item => item.classList.remove('show'));
@@ -30,5 +30,5 @@ const toggleMenu = () => {
   }
 }
 
-menuBtn.addEventListener('click', toggleMenu);
+closeBtn.addEventListener('click', toggleMenu);
 penBtn.addEventListener('click', toggleMenu);

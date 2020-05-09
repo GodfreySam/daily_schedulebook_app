@@ -1,41 +1,60 @@
+@charset "UTF-8";
+
 * {
-    margin: 0;
-    padding: 0;
-    font-family: "montserrat", sans-serif;
     box-sizing: border-box;
 }
 
 body {
-    background-image: linear-gradient(120deg, #fbc531, #487eb0);
-    min-height: 100v;
+    background: #adf0f1;
+    padding: 50px 0 0 0;
 }
 
-main {
-    max-width: 900px;
-    margin: auto;
-    padding: 0.5rem;
-    text-align: center;
-}
-
-/* Overlay Menu and Input area */
-.menu-btn {
-    position: absolute;
-    z-index: 6;
-    top: 2px; 
-    cursor: pointer
-}
-
-.fa-plus {
-    transform: rotate(45deg);
-    color: #fff;
+body, header, input {
+    font-family: "Roboto", sans-serif;
 } 
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 65px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 15px;
+    z-index: 5;
+    background: #25b99a;
+    box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+header h1, h2 {
+    font-size: 20px;
+}
+
+form {
+	display: block;
+    padding: 1em;
+	color: #000;
+	text-decoration: none;
+	border-right: 1px solid #4C4C4C;
+	opacity: .6;
+}
+
+#event, #start, #stop {
+    background: #034d3d;
+    color: #f3b408; 
+}
 
 /* Menu Overlay */
 .menu {
     margin-top: 10px;
     position: fixed;
     width: 80%;   
-    opacity: 0.9;
+    box-shadow: 0px 2px 4px rgba(44, 62, 80, 0.15);
+    z-index: 220;
     visibility: hidden;
 }
 
@@ -43,7 +62,7 @@ main {
     visibility: visible;
 }
 
-.pen-hide {
+.close {
     visibility: hidden;
 }
 
@@ -51,8 +70,7 @@ main {
     padding-top: 0;
     color: #fbc531; 
     width: 96vw;
-    /* height: 50vh; */
-    background: rgba(105, 105, 105, 0.9);
+    background: #323232;
     overflow: hidden;
 }
 
@@ -60,9 +78,14 @@ main {
     padding: 10px;
 } 
 
-h1.page-header {
-    font-size: 1.2rem;
-    margin: 10px 0 40px 0; 
+.fa-plus {
+    transform: rotate(45deg);
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+.fa-plus:hover {
+    color: red;
 }
 
 .time-display {
@@ -73,157 +96,17 @@ h1.page-header {
     font-weight: bold;
     float: left;
 }
-
-textarea.form-control { 
-    font-size: 0.9rem;
-    color: #fff;
-    border: 0.05rem solid #fbc531;
-    background: inherit;
-    width: 70vw;
-    max-height: 40px; 
-}
-
-textarea.form-control::placeholder {
-    color: #fff;
-}
-
-.time-area {
-    display: flex;
-}
-
-.time-area input[type = time] {
-    font-size: 0.8rem;
-    margin-left: 5px;
-    background: inherit;
-    color: #fff;
-}
-
-.timer label {
-    font-size: 0.8rem;
-}
-
-#stopLabel {
-    margin-left: 2rem;
-}
-
-label {
-    font-weight: bold;
-}
-
-td#items {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 0.25rem;
-    justify-content: space-around;
-}
-
- .inner-td {
-    font-size: 0.74rem;
-    color: darkred;
-    padding-right: 10px;
-    padding-bottom: 0;
-    margin-bottom: -10px;
-    font-stretch: extra-condensed;
-}
-
-label#begin {
-    margin-left: 100px;
-}
-
-label#end {
-   margin-left: 10px;
-} 
-
-input#startTime, input#stopTime {
-    background: inherit;
-    border: none;
-}
-
-.btn-area {
-    display: flex;
-}
-
-.btn {
-    cursor: pointer;
-}
-
-.add-btn {
-    font-size: 0.9rem;
-}
-
-thead tr#tr-time th { font-size: 0.8rem;}
+/* /////////////////////////////// */
+tbody { font-size: 1.25rem;}
 
 tbody tr {
-    border-bottom: 0.125rem solid #fff;
+    border-bottom: 0.15rem solid #fff;
 }
 
-/* Media Query */
-@media(max-width: 700px) {
-
-     h1.page-header {
-         font-size: 1rem;
-         float: left;
-         margin-left: 15px;
-    }
-
-    .time-area {
-        flex-direction: column;
-    }
-
-    .timer {
-        text-align: left;  
-        margin-top: 0; 
-    }
-
-    .time-area #start {
-        margin-left: 24px;
-    }
-
-    .time-area #stop {
-        margin-left: 15px;
-    }
-
-
-
-    #stopLabel {
-        margin-left: 0;
-    }
-
-    label#end {
-        padding-left: 2px;
-        margin-left: -4px;
-        margin-right: -5px;
-    }
-
-    .inner-td {
-    font-size: 0.68rem;
-    font-stretch: extra-condensed;
-    justify-content: space-evenly;
-    padding: 0;
-    margin: 0 0 3px 2px;
-   }
-
-   td#items {
-    flex-direction: column;
-    margin-bottom: 0.15rem;
-    font-size: 0.85rem;
+#items::first-letter {
+    text-transform: uppercase;
 }
 
-   label#begin {
-    padding: 0.3rem;
-    margin-left: 8px;
-   }
-
-   label#end {
-    padding: 0.3rem;
-    margin-left: 20px;
-   }
-
-    textarea.form-control { 
-        width: 85vw;
-    }
-
-    tbody tr {
-    border-bottom: 0.1rem solid #fff;
-}
+.inner-td {
+    font-size: 0.75rem;
 }
