@@ -20,11 +20,11 @@ class UI {
     const row = document.createElement('tr');
     
     row.innerHTML = `                 
-      <td id="items">${todo.item}</td>
-        <label id="begin" class="inner-td">Start:</label><input type="time" id="startTime" class="inner-td todo-start" value="${todo.start}"> 
-        <label id="end" class="inner-td">Finish:</label><input type="time" id="stopTime" class="inner-td" value="${todo.stop}">
+      <td id="items" class="col text-monospace">${todo.item}</td>
+        <label id="begin" class="inner-td mx-2 text-monospace">From:</label><input type="time" id="startTime" class="inner-td col-md-auto p-0 bg-info border-0 text-monospace" value="${todo.start}"> 
+        <label id="end" class="inner-td mx-2 text-monospace">To:</label><input type="time" id="stopTime" class="inner-td col-md-auto p-0 bg-info border-0 text-monospace" value="${todo.stop}">
       <td class="delete-control">
-        <i class="fas fa-trash-alt delete btn btn-sm btn-outline-danger border-0"></i>
+        <i class="fas fa-trash-alt delete btn btn-sm btn-outline-danger border-0 col col-lg-2"></i>
       </td>
     `;
      list.appendChild(row);
